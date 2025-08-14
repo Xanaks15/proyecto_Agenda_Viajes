@@ -5,16 +5,3 @@ body { scroll-behavior: smooth; }
 }
 .card img { object-fit: cover; height: 220px; }
 .table td, .table th { vertical-align: middle; }
-
-header.hero {
-  height: 500px; /* Puedes cambiar este valor */
-  background-size: cover;
-  background-position: center;
-}
-
-/* Para pantallas pequeñas */
-@media (max-width: 768px) {
-  header.hero {
-      height: 300px; /* Altura menor en móviles */
-  }
-}

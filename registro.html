@@ -6,7 +6,7 @@
 <title>Agencia de Viajes Express</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="/proyecto_Agenda_Viajes/css/estilos.css">
 
 </head>
 <body>
@@ -33,63 +33,84 @@
 
 
 <main class="container my-5">
-  <h1 class="mb-4">Registro de Interesados</h1>
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col-lg-8">
-      <form id="formRegistro" novalidate>
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label class="form-label">Nombre completo</label>
-            <input type="text" class="form-control" id="nombre" required>
-            <div class="invalid-feedback">Ingresa tu nombre.</div>
+      <div class="form-section">
+        <h1 class="mb-4 text-center">Registro de Interesados</h1>
+        
+        <form id="formRegistro" novalidate>
+          <div class="row g-3">
+            <!-- Nombre completo -->
+            <div class="col-md-6">
+              <label class="form-label required-field">Nombre completo</label>
+              <input type="text" class="form-control" id="nombre" required>
+              <div class="invalid-feedback">Por favor ingresa tu nombre completo</div>
+            </div>
+            
+            <!-- Correo electrónico -->
+            <div class="col-md-6">
+              <label class="form-label required-field">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">Por favor ingresa un correo válido</div>
+            </div>
+            
+            <!-- Destino de interés -->
+            <div class="col-md-6">
+              <label class="form-label required-field">Destino de interés</label>
+              <select id="destino" class="form-select" required>
+                <option value="" selected disabled>Selecciona un paquete</option>
+                <option value="Cancún All-Inclusive">Cancún All-Inclusive</option>
+                <option value="Europa en 15 días">Europa en 15 días</option>
+                <option value="Experiencia en Nueva York">Experiencia en Nueva York</option>
+                <option value="Safari en África">Safari en África</option>
+                <option value="Maravillas de Asia">Maravillas de Asia</option>
+                <option value="Ruta por Sudamérica">Ruta por Sudamérica</option>
+                <option value="Islas del Caribe">Islas del Caribe</option>
+                <option value="Desierto de Dubái">Desierto de Dubái</option>
+                <option value="Canadá y sus paisajes">Canadá y sus paisajes</option>
+                <option value="Ruta Maya México">Ruta Maya México</option>
+              </select>
+              <div class="invalid-feedback">Por favor selecciona un destino</div>
+            </div>
+            
+            <!-- Número de personas -->
+            <div class="col-md-3">
+              <label class="form-label required-field">Número de personas</label>
+              <input type="number" min="1" class="form-control" id="personas" required>
+              <div class="invalid-feedback">Debe ser al menos 1 persona</div>
+            </div>
+            
+            <!-- Fecha tentativa -->
+            <div class="col-md-3">
+              <label class="form-label required-field">Fecha tentativa de viaje</label>
+              <input type="date" class="form-control" id="fecha" required>
+              <div class="invalid-feedback">Selecciona una fecha futura</div>
+            </div>
+            
+            <!-- Comentarios adicionales -->
+            <div class="col-12">
+              <label class="form-label">Comentarios adicionales (opcional)</label>
+              <textarea class="form-control" id="comentarios" rows="3" placeholder="Preferencias, presupuestos, etc."></textarea>
+            </div>
           </div>
-          <div class="col-md-6">
-            <label class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" required>
-            <div class="invalid-feedback">Ingresa un correo válido.</div>
+
+          <!-- Botones de acción -->
+          <div class="d-flex gap-2 mt-4 justify-content-center">
+            <button class="btn btn-primary px-4" type="submit">
+              <i class="bi bi-save me-2"></i>Guardar registro
+            </button>
+            <button class="btn btn-success px-4" type="button" id="btnExportar">
+              <i class="bi bi-filetype-txt me-2"></i>Exportar a TXT
+            </button>
           </div>
-          <div class="col-md-6">
-            <label class="form-label">Destino de interés</label>
-            <select id="destino" class="form-select" required>
-              <option value="" selected disabled>Selecciona un paquete</option>
-              <option value="Cancún All-Inclusive">Cancún All-Inclusive</option>
-<option value="Europa en 15 días">Europa en 15 días</option>
-<option value="Experiencia en Nueva York">Experiencia en Nueva York</option>
-<option value="Safari en África">Safari en África</option>
-<option value="Maravillas de Asia">Maravillas de Asia</option>
-<option value="Ruta por Sudamérica">Ruta por Sudamérica</option>
-<option value="Islas del Caribe">Islas del Caribe</option>
-<option value="Desierto de Dubái">Desierto de Dubái</option>
-<option value="Canadá y sus paisajes">Canadá y sus paisajes</option>
-<option value="Ruta Maya México">Ruta Maya México</option>
-            </select>
-            <div class="invalid-feedback">Selecciona un destino.</div>
-          </div>
-          <div class="col-md-3">
-            <label class="form-label">Número de personas</label>
-            <input type="number" min="1" class="form-control" id="personas" required>
-            <div class="invalid-feedback">Ingresa un número mayor a 0.</div>
-          </div>
-          <div class="col-md-3">
-            <label class="form-label">Fecha tentativa de viaje</label>
-            <input type="date" class="form-control" id="fecha" required>
-            <div class="invalid-feedback">Selecciona una fecha futura.</div>
-          </div>
-          <div class="col-12">
-            <label class="form-label">Comentarios adicionales (opcional)</label>
-            <textarea class="form-control" id="comentarios" rows="3" placeholder="Preferencias, presupuestos, etc."></textarea>
-          </div>
-        </div>
-        <div class="d-flex gap-2 mt-4">
-          <button class="btn btn-primary" type="submit"><i class="bi bi-save"></i> Guardar en memoria</button>
-          <button class="btn btn-success" type="button" id="btnExportar"><i class="bi bi-filetype-txt"></i> Exportar a TXT</button>
-        </div>
-        <div id="alertaRegistro" class="alert mt-3 d-none" role="alert"></div>
-      </form>
+
+          <!-- Mensaje de alerta -->
+          <div id="alertaRegistro" class="alert mt-3 d-none" role="alert"></div>
+        </form>
+      </div>
     </div>
   </div>
 </main>
-
 <footer class="bg-dark text-light py-4 mt-5">
   <div class="container text-center small">
     <div>© 2025 Agencia de Viajes Express. Todos los derechos reservados.</div>

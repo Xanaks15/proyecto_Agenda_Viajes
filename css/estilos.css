@@ -1,0 +1,20 @@
+body { scroll-behavior: smooth; }
+.hero {
+  min-height: 70vh;
+  background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('https://images.unsplash.com/photo-1504280390368-3971c192e451?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+}
+.card img { object-fit: cover; height: 220px; }
+.table td, .table th { vertical-align: middle; }
+
+header.hero {
+  height: 500px; /* Puedes cambiar este valor */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  header.hero {
+      height: 300px; /* Altura menor en móviles */
+  }
+}

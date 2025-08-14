@@ -1,0 +1,3 @@
+Nombre;Email;Destino;NumeroPersonas;Fecha;Comentarios
+Juan Pérez;jperez@example.com;Cancún All-Inclusive;2;2025-12-10;Habitación con vista al mar
+Ana López;ana.lopez@example.com;Europa en 15 días;1;2026-01-20;Itinerario flexible

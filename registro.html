@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agencia de Viajes Express</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">
+      <i class="bi bi-airplane-fill me-1"></i>Agencia de Viajes Express
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample07">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
+        <li class="nav-item"><a class="nav-link" href="clientes.html">Lista de Clientes</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container my-5">
+  <h1 class="mb-4">Registro de Interesados</h1>
+  <div class="row">
+    <div class="col-lg-8">
+      <form id="formRegistro" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="nombre" required>
+            <div class="invalid-feedback">Ingresa tu nombre.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">Ingresa un correo válido.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Destino de interés</label>
+            <select id="destino" class="form-select" required>
+              <option value="" selected disabled>Selecciona un paquete</option>
+              <option value="Cancún All-Inclusive">Cancún All-Inclusive</option>
+<option value="Europa en 15 días">Europa en 15 días</option>
+<option value="Experiencia en Nueva York">Experiencia en Nueva York</option>
+<option value="Safari en África">Safari en África</option>
+<option value="Maravillas de Asia">Maravillas de Asia</option>
+<option value="Ruta por Sudamérica">Ruta por Sudamérica</option>
+<option value="Islas del Caribe">Islas del Caribe</option>
+<option value="Desierto de Dubái">Desierto de Dubái</option>
+<option value="Canadá y sus paisajes">Canadá y sus paisajes</option>
+<option value="Ruta Maya México">Ruta Maya México</option>
+            </select>
+            <div class="invalid-feedback">Selecciona un destino.</div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Número de personas</label>
+            <input type="number" min="1" class="form-control" id="personas" required>
+            <div class="invalid-feedback">Ingresa un número mayor a 0.</div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Fecha tentativa de viaje</label>
+            <input type="date" class="form-control" id="fecha" required>
+            <div class="invalid-feedback">Selecciona una fecha futura.</div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Comentarios adicionales (opcional)</label>
+            <textarea class="form-control" id="comentarios" rows="3" placeholder="Preferencias, presupuestos, etc."></textarea>
+          </div>
+        </div>
+        <div class="d-flex gap-2 mt-4">
+          <button class="btn btn-primary" type="submit"><i class="bi bi-save"></i> Guardar en memoria</button>
+          <button class="btn btn-success" type="button" id="btnExportar"><i class="bi bi-filetype-txt"></i> Exportar a TXT</button>
+        </div>
+        <div id="alertaRegistro" class="alert mt-3 d-none" role="alert"></div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-dark text-light py-4 mt-5">
+  <div class="container text-center small">
+    <div>© 2025 Agencia de Viajes Express. Todos los derechos reservados.</div>
+    <div class="mt-1"><i class="bi bi-geo-alt"></i> Puebla, México</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

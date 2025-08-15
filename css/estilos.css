@@ -5,3 +5,26 @@ body { scroll-behavior: smooth; }
 }
 .card img { object-fit: cover; height: 220px; }
 .table td, .table th { vertical-align: middle; }
+
+.hero {
+  /* Imagen de fondo */
+  background-image: url("https://www.vinccihoteles.com/media/uploads/cms_apps/imagenes/disposicion-articulos-viaje-angulo-alto.jpg?q=pr:sharp/rs:fill/w:900/h:500/g:ce/f:jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+

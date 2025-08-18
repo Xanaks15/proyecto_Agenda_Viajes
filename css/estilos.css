@@ -263,3 +263,130 @@ footer .small{ color:#cfe3ff; }
   .carousel-item img{ height:320px; }
   .hero{ min-height:70vh; }
 }
+
+
+
+
+
+/* ===== Servicios: cards más elegantes, legibles y consistentes ===== */
+
+/* Grid: respirito extra entre columnas en pantallas grandes */
+@media (min-width: 992px){
+  main .row.g-4 { row-gap: 2rem; }
+}
+
+/* Card: imagen más alta, overlay sutil y hover “lift” */
+.card .card-img-top{
+  height: 220px; object-fit: cover;
+  filter: saturate(1.02) contrast(1.02);
+}
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(15,23,42,.12);
+}
+
+/* Card body: jerarquía tipográfica y metadatos alineados */
+.card .card-title{
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+.card .card-body .card-text{
+  display: flex; align-items: center; gap: .5rem;
+  margin: .15rem 0;
+  color: var(--muted);
+}
+.card .card-body .card-text .bi{
+  font-size: 1rem;
+  opacity: .9;
+}
+
+/* Precio resaltado como “pill” sin cambiar el HTML (último p dentro del body) */
+.card .card-body .card-text:last-of-type{
+  align-self: flex-start;
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(56,189,248,.12), rgba(245,158,11,.12));
+  color: var(--ink);
+  border: 1px solid rgba(2,8,23,.08);
+  margin: 1rem 0 1rem 0;
+}
+
+/* Botón: outline más visible pero en la misma jerarquía */
+.btn-outline-primary{
+  border-color: var(--brand-500);
+  color: var(--brand-600);
+}
+.btn-outline-primary:hover{
+  background: linear-gradient(135deg, var(--brand-600), var(--brand-400));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(2,132,199,.25);
+}
+
+/* ===== Modales: encabezado con leve gradiente + listas sin bordes duros ===== */
+.modal-content{
+  border: 0; border-radius: 1rem;
+  box-shadow: 0 30px 70px rgba(2,8,23,.25);
+}
+.modal-header{
+  border: 0;
+  background: linear-gradient(90deg, var(--brand-600), var(--brand-400));
+  color: #fff;
+  border-top-left-radius: 1rem; border-top-right-radius: 1rem;
+  padding-right: 1.25rem;
+}
+
+/* Botón de cierre blanco en los modales */
+.btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 1; /* que no se vea apagado */
+}
+.btn-close:focus {
+  box-shadow: none;
+}
+
+.modal-body img {
+  height: 100%;          /* ocupar toda la altura disponible */
+  object-fit: cover;     /* que recorte si sobra, sin deformar */
+  border-radius: .75rem; /* esquinas suaves */
+}
+
+.modal-title{ font-weight: 700; }
+.modal-body .list-group-item{
+  border: 0;
+  padding-left: 0; padding-right: 0;
+  display: flex; gap: .5rem; align-items: start;
+}
+.modal-body .list-group-item strong{ min-width: 95px; color: var(--ink); }
+
+.modal-footer{ 
+  border-top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Nota informativa del modal */
+.modal-body .small.text-muted{
+  background: rgba(2,8,23,.04);
+  border: 1px dashed rgba(2,8,23,.12);
+  border-radius: .6rem;
+  padding: .5rem .75rem;
+}
+
+/* ===== Footer en esta página: mismo estilo general ya definido ===== */
+/* (hereda tu gradiente/nav ya configurado en estilos principales) */
+
+
+/* ===== Sub-hero (header delgado para páginas internas) ===== */
+.sub-hero {
+  min-height: 35vh; /* más bajo que el hero de inicio */
+  background: linear-gradient(rgba(2,8,23,.55), rgba(2,8,23,.55)),
+              url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200&auto=format&fit=crop")
+              center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub-hero h1 {
+  text-shadow: 0 6px 20px rgba(0,0,0,.5);
+}

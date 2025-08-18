@@ -31,82 +31,103 @@
   </div>
 </nav>
 
+<!-- Encabezado interno delgado (coherente con Servicios) -->
+<header class="sub-hero d-flex align-items-center text-center text-white">
+  <div class="container">
+    <h1 class="h3 fw-bold mb-0"><i class="bi bi-pencil-square me-2"></i> Registro de Interesados</h1>
+  </div>
+</header>
 
 <main class="container my-5">
   <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <div class="form-section">
-        <h1 class="mb-4 text-center">Registro de Interesados</h1>
-        
-        <form id="formRegistro" novalidate>
-          <div class="row g-3">
-            <!-- Nombre completo -->
-            <div class="col-md-6">
-              <label class="form-label required-field">Nombre completo</label>
-              <input type="text" class="form-control" id="nombre" required>
-              <div class="invalid-feedback">Por favor ingresa tu nombre completo</div>
-            </div>
-            
-            <!-- Correo electrónico -->
-            <div class="col-md-6">
-              <label class="form-label required-field">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" required>
-              <div class="invalid-feedback">Por favor ingresa un correo válido</div>
-            </div>
-            
-            <!-- Destino de interés -->
-            <div class="col-md-6">
-              <label class="form-label required-field">Destino de interés</label>
-              <select id="destino" class="form-select" required>
-                <option value="" selected disabled>Selecciona un paquete</option>
-                <option value="Cancún All-Inclusive">Cancún All-Inclusive</option>
-                <option value="Europa en 15 días">Europa en 15 días</option>
-                <option value="Experiencia en Nueva York">Experiencia en Nueva York</option>
-                <option value="Safari en África">Safari en África</option>
-                <option value="Maravillas de Asia">Maravillas de Asia</option>
-                <option value="Ruta por Sudamérica">Ruta por Sudamérica</option>
-                <option value="Islas del Caribe">Islas del Caribe</option>
-                <option value="Desierto de Dubái">Desierto de Dubái</option>
-                <option value="Canadá y sus paisajes">Canadá y sus paisajes</option>
-                <option value="Ruta Maya México">Ruta Maya México</option>
-              </select>
-              <div class="invalid-feedback">Por favor selecciona un destino</div>
-            </div>
-            
-            <!-- Número de personas -->
-            <div class="col-md-3">
-              <label class="form-label required-field">Número de personas</label>
-              <input type="number" min="1" class="form-control" id="personas" required>
-              <div class="invalid-feedback">Debe ser al menos 1 persona</div>
-            </div>
-            
-            <!-- Fecha tentativa -->
-            <div class="col-md-3">
-              <label class="form-label required-field">Fecha tentativa de viaje</label>
-              <input type="date" class="form-control" id="fecha" required>
-              <div class="invalid-feedback">Selecciona una fecha futura</div>
-            </div>
-            
-            <!-- Comentarios adicionales -->
-            <div class="col-12">
-              <label class="form-label">Comentarios adicionales (opcional)</label>
-              <textarea class="form-control" id="comentarios" rows="3" placeholder="Preferencias, presupuestos, etc."></textarea>
-            </div>
-          </div>
+    <div class="col-xl-8 col-lg-9">
+      <!-- Card de formulario -->
+      <div class="card border-0 shadow-lg rounded-4 overflow-hidden form-card">
+        <!-- Cinta superior decorativa -->
+        <div class="form-card__bar"></div>
 
-          <!-- Botones de acción -->
-          <div class="d-flex gap-2 mt-4 justify-content-center">
-            <button class="btn btn-primary px-4" type="submit">
-              <i class="bi bi-save me-2"></i>Guardar registro
-            </button>
-            <button class="btn btn-success px-4" type="button" id="btnExportar">
-              <i class="bi bi-filetype-txt me-2"></i>Exportar a TXT
-            </button>
-          </div>
+        <div class="card-body p-4 p-md-5">
+          <h2 class="h4 fw-bold text-center mb-4">Cuéntanos de tu viaje</h2>
 
-          <!-- Mensaje de alerta -->
-          <div id="alertaRegistro" class="alert mt-3 d-none" role="alert"></div>
-        </form>
+          <form id="formRegistro" novalidate>
+            <div class="row g-3">
+              <!-- Nombre completo -->
+              <div class="col-md-6">
+                <label for="nombre" class="form-label required-field">Nombre completo</label>
+                <input type="text" class="form-control form-control-lg" id="nombre" placeholder="Ej. Ana López" required>
+                <div class="invalid-feedback">Por favor ingresa tu nombre completo</div>
+              </div>
+
+              <!-- Correo -->
+              <div class="col-md-6">
+                <label for="email" class="form-label required-field">Correo electrónico</label>
+                <div class="input-group input-group-lg">
+                  <span class="input-group-text"><i class="bi bi-at"></i></span>
+                  <input type="email" class="form-control" id="email" placeholder="tucorreo@ejemplo.com" required>
+                  <div class="invalid-feedback">Por favor ingresa un correo válido</div>
+                </div>
+              </div>
+
+              <!-- Destino -->
+              <div class="col-lg-6">
+                <label for="destino" class="form-label required-field">Destino de interés</label>
+                <select id="destino" class="form-select form-select-lg" required>
+                  <option value="" selected disabled>Selecciona un paquete</option>
+                  <option value="Cancún All-Inclusive">Cancún All-Inclusive</option>
+                  <option value="Europa en 15 días">Europa en 15 días</option>
+                  <option value="Experiencia en Nueva York">Experiencia en Nueva York</option>
+                  <option value="Safari en África">Safari en África</option>
+                  <option value="Maravillas de Asia">Maravillas de Asia</option>
+                  <option value="Ruta por Sudamérica">Ruta por Sudamérica</option>
+                  <option value="Islas del Caribe">Islas del Caribe</option>
+                  <option value="Desierto de Dubái">Desierto de Dubái</option>
+                  <option value="Canadá y sus paisajes">Canadá y sus paisajes</option>
+                  <option value="Ruta Maya México">Ruta Maya México</option>
+                </select>
+                <div class="invalid-feedback">Por favor selecciona un destino</div>
+              </div>
+
+              <!-- Personas -->
+              <div class="col-6 col-lg-3">
+                <label for="personas" class="form-label required-field">Número de personas</label>
+                <input type="number" min="1" class="form-control form-control-lg" id="personas" placeholder="1" required>
+                <div class="invalid-feedback">Debe ser al menos 1 persona</div>
+              </div>
+
+              <!-- Fecha -->
+              <div class="col-6 col-lg-3">
+                <label for="fecha" class="form-label required-field">Fecha tentativa</label>
+                <input type="date" class="form-control form-control-lg" id="fecha" required>
+                <div class="invalid-feedback">Selecciona una fecha futura</div>
+              </div>
+
+              <!-- Comentarios -->
+              <div class="col-12">
+                <label for="comentarios" class="form-label">Comentarios (opcional)</label>
+                <textarea class="form-control" id="comentarios" rows="3" placeholder="Preferencias, presupuesto, restricciones, etc."></textarea>
+              </div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="d-flex flex-wrap gap-2 mt-4 justify-content-center">
+              <button class="btn btn-primary btn-lg px-4" type="submit">
+                <i class="bi bi-save me-2"></i>Guardar registro
+              </button>
+              <button class="btn btn-success btn-lg px-4" type="button" id="btnExportar">
+                <i class="bi bi-filetype-txt me-2"></i>Exportar a TXT
+              </button>
+            </div>
+
+            <!-- Alertas -->
+            <div id="alertaRegistro" class="alert mt-3 d-none" role="alert"></div>
+
+            <!-- Nota de privacidad pequeña -->
+            <p class="form-hint text-center mt-3 mb-0">
+              <i class="bi bi-shield-lock"></i>
+              Cuidamos tus datos y solo los usamos para contactarte sobre tu viaje.
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   </div>

@@ -391,3 +391,82 @@ footer .small{ color:#cfe3ff; }
 .sub-hero h1 {
   text-shadow: 0 6px 20px rgba(0,0,0,.5);
 }
+
+/* ===== Registro: card y campos “premium” ===== */
+.form-card { 
+  background: var(--surface); 
+  max-width: 1100px;   /* antes quedaba limitada por el col-xx */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-card__bar{
+  height: 6px;
+  background: linear-gradient(90deg, var(--brand-600), var(--accent-500));
+}
+
+/* Etiquetas requeridas con asterisco */
+.required-field::after{
+  content:" *";
+  color: var(--accent-500);
+  font-weight: 700;
+}
+
+/* Inputs grandes y cómodos */
+.form-control-lg, .form-select-lg, .input-group-lg>.form-control, .input-group-lg>.form-select{
+  font-size: 1rem;   /* antes heredaba ~1.25rem */
+  padding-top: .65rem;
+  padding-bottom: .65rem;
+}
+
+/* Grupo con ícono */
+.input-group-text{
+  background: linear-gradient(135deg, rgba(56,189,248,.12), rgba(245,158,11,.12));
+  border: 1px solid rgba(2,8,23,.08);
+  border-right: 0;
+}
+
+/* Estados de validación (visuales, sin cambiar tu lógica) */
+.form-control:focus, .form-select:focus{
+  border-color: rgba(14,165,233,.45);
+  box-shadow: 0 0 0 .2rem rgba(14,165,233,.15);
+}
+
+.was-validated .form-control:invalid, .form-control.is-invalid,
+.was-validated .form-select:invalid, .form-select.is-invalid{
+  border-color: #ef4444;
+}
+.was-validated .form-control:valid, .form-control.is-valid,
+.was-validated .form-select:valid, .form-select.is-valid{
+  border-color: #22c55e;
+}
+
+/* Hint/nota de privacidad */
+.form-hint{
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* Botones consistentes con tu tema */
+#btnExportar.btn-success{
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  border: 0;
+  box-shadow: 0 10px 30px rgba(22,163,74,.25);
+}
+#btnExportar.btn-success:hover{
+  filter: saturate(1.05);
+  transform: translateY(-1px);
+}
+
+/* Pequeños ajustes responsivos */
+@media (max-width: 575.98px){
+  .form-card .card-body{ padding: 1.25rem; }
+}
+
+.form-label{
+  font-size: .95rem;
+}
+.invalid-feedback,
+.valid-feedback{
+  font-size: .85rem;
+}

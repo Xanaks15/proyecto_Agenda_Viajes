@@ -405,6 +405,12 @@ footer .small{ color:#cfe3ff; }
   background: linear-gradient(90deg, var(--brand-600), var(--accent-500));
 }
 
+/* Evita que la card de registro se mueva al pasar el mouse */
+.form-card:hover {
+  transform: none !important;
+  box-shadow: 0 18px 45px rgba(15,23,42,.12); /* mismo shadow que tenía, pero fijo */
+}
+
 /* Etiquetas requeridas con asterisco */
 .required-field::after{
   content:" *";
@@ -458,9 +464,8 @@ footer .small{ color:#cfe3ff; }
   transform: translateY(-1px);
 }
 
-/* Pequeños ajustes responsivos */
-@media (max-width: 575.98px){
-  .form-card .card-body{ padding: 1.25rem; }
+@media (min-width: 992px){
+  .form-card{ max-width: 100%; } /* aprovecha toda la mitad derecha */
 }
 
 .form-label{

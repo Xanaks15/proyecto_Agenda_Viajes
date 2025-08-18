@@ -32,32 +32,80 @@
 </nav>
 
 
-<main class="container my-5">
-  <h1 class="mb-4">Contacto</h1>
+<main class="container my-5 contact-section">
+  <div class="row g-4 align-items-start">
+    <!-- Columna izquierda: información y beneficios -->
+    <div class="col-lg-5">
+      <div class="contact-pane p-4 p-md-5 rounded-4 shadow">
+        <h1 class="h3 fw-bold mb-3">Hablemos de tu viaje</h1>
+        <p class="text-muted mb-4">
+          Cuéntanos qué tienes en mente y te responderemos con opciones personalizadas.
+        </p>
 
-  <div id="alertExito" class="alert alert-success d-flex align-items-center d-none" role="alert">
-    <i class="bi bi-check-circle-fill me-2"></i>
-    <div>¡Mensaje enviado exitosamente!</div>
+        <ul class="list-unstyled d-grid gap-3 mb-4">
+          <li class="d-flex align-items-start gap-3">
+            <span class="contact-bullet"><i class="bi bi-lightning-charge"></i></span>
+            <div><strong>Respuesta rápida</strong><br><span class="text-muted">En horario laboral</span></div>
+          </li>
+          <li class="d-flex align-items-start gap-3">
+            <span class="contact-bullet"><i class="bi bi-shield-check"></i></span>
+            <div><strong>Datos protegidos</strong><br><span class="text-muted">Sólo para contactarte</span></div>
+          </li>
+          <li class="d-flex align-items-start gap-3">
+            <span class="contact-bullet"><i class="bi bi-stars"></i></span>
+            <div><strong>Asesoría sin costo</strong><br><span class="text-muted">Ideas y rutas a tu medida</span></div>
+          </li>
+        </ul>
+
+        <div class="d-grid gap-2 small text-muted">
+          <div><i class="bi bi-geo-alt me-2"></i>Puebla, México</div>
+          <div><i class="bi bi-envelope me-2"></i> contacto@agenciaviajes.mx</div>
+          <div><i class="bi bi-telephone me-2"></i> (222) 000 0000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: card con el formulario -->
+    <div class="col-lg-7">
+      <!-- Alerta de éxito (se muestra con tu JS) -->
+      <div id="alertExito" class="alert alert-success d-flex align-items-center d-none mb-3" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i>
+        <div>¡Mensaje enviado exitosamente!</div>
+      </div>
+
+      <div class="card border-0 shadow-lg rounded-4 overflow-hidden contact-card">
+        <div class="form-card__bar"></div>
+        <div class="card-body p-4 p-md-5">
+          <h2 class="h4 fw-bold text-center mb-4">Envíanos un mensaje</h2>
+
+          <form id="formContacto" class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Nombre completo</label>
+              <input type="text" class="form-control form-control-lg" id="c_nombre" placeholder="Ej. Ana López" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Correo electrónico</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text"><i class="bi bi-at"></i></span>
+                <input type="email" class="form-control" id="c_email" placeholder="tucorreo@ejemplo.com" required>
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Mensaje</label>
+              <textarea class="form-control" id="c_mensaje" rows="5" placeholder="Cuéntanos fechas, destino, presupuesto, etc." required></textarea>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+              <button class="btn btn-primary btn-lg px-4" type="submit">
+                <i class="bi bi-send-fill me-2"></i>Enviar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <form id="formContacto" class="row g-3">
-    <div class="col-md-6">
-      <label class="form-label">Nombre completo</label>
-      <input type="text" class="form-control" id="c_nombre" required>
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Correo electrónico</label>
-      <input type="email" class="form-control" id="c_email" required>
-    </div>
-    <div class="col-12">
-      <label class="form-label">Mensaje</label>
-      <textarea class="form-control" id="c_mensaje" rows="4" required></textarea>
-    </div>
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit"><i class="bi bi-send-fill"></i> Enviar</button>
-    </div>
-  </form>
 </main>
+
 
 <footer class="bg-dark text-light py-4 mt-5">
   <div class="container text-center small">

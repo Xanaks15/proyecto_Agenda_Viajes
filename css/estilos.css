@@ -475,3 +475,50 @@ footer .small{ color:#cfe3ff; }
 .valid-feedback{
   font-size: .85rem;
 }
+
+/* ===== Contacto ===== */
+.contact-section{ scroll-margin-top: 90px; }
+
+.contact-pane{
+  background: linear-gradient(180deg, var(--surface), var(--surface-2));
+  border: 1px solid rgba(2,8,23,.06);
+}
+
+/* Icono “bullet” redondo con gradiente de marca */
+.contact-bullet{
+  width: 36px; height: 36px;
+  display: inline-grid; place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand-600), var(--brand-400));
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(2,132,199,.25);
+}
+
+/* Card del formulario de contacto: fija (sin salto en hover) */
+.contact-card{ background: var(--surface); }
+.contact-card:hover{
+  transform: none !important;
+  box-shadow: 0 18px 45px rgba(15,23,42,.12);
+}
+
+/* Inputs coherentes con Registro pero en tamaño equilibrado */
+.contact-card .form-control-lg,
+.contact-card .input-group-lg > .form-control,
+.contact-card .input-group-lg > .form-select{
+  font-size: 1rem;
+  padding-top: .7rem; padding-bottom: .7rem;
+  border-radius: .9rem;
+}
+.contact-card .input-group-text{
+  background: linear-gradient(135deg, rgba(56,189,248,.12), rgba(245,158,11,.12));
+  border: 1px solid rgba(2,8,23,.08);
+  border-right: 0;
+}
+#c_mensaje{ 
+  min-height: 195px; 
+}
+
+/* En pantallas grandes, da más aire al layout */
+@media (min-width: 992px){
+  .contact-pane{ position: sticky; top: 100px; }
+}

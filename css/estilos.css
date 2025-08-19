@@ -1,8 +1,8 @@
 /* -------------------------------------------------
-   Agencia de Viajes Express · Estilos 2.0
-   Paleta: Sky Blue (#0ea5e9) + Amber (#f59e0b)
-   Header/Footer: Navy
-   Bootstrap 5 compatible (override por variables/clases)
+  Agencia de Viajes Express · Estilos 2.0
+  Paleta: Sky Blue (#0ea5e9) + Amber (#f59e0b)
+  Header/Footer: Navy
+  Bootstrap 5 compatible (override por variables/clases)
 --------------------------------------------------*/
 
 /* ===== Design tokens ===== */
@@ -142,15 +142,13 @@ body{
   height:520px; object-fit:cover;
 }
 
-/* ===== Fix captions en móvil (xs/sm) + layering seguro ===== */
-
 /* Asegura que el caption se posicione respecto al slide */
 .carousel-item{ position: relative; }
 
-/* Base: que siempre esté por encima y visible */
+/*que siempre esté por encima */
 .carousel-caption{
-  display:block !important;     /* por si algún utilitario lo ocultó */
-  z-index: 3;                   /* sobre la imagen */
+  display:block !important;     
+  z-index: 3;            
   opacity:1 !important;
   visibility: visible !important;
 
@@ -159,7 +157,7 @@ body{
   border:1px solid rgba(255,255,255,.15);
   border-radius:1rem;
   padding:1rem 1.25rem;
-  left:10%; right:10%; bottom:1rem;   /* un poco más centrado que el default */
+  left:10%; right:10%; bottom:1rem;  
 }
 
 /* Texto del caption */
@@ -170,9 +168,8 @@ body{
   color:#e2e8f0; margin:0;
 }
 
-/* Ajustes para pantallas pequeñas */
 @media (max-width: 575.98px){
-  .carousel-item img{ height:300px; }      /* baja un poco la altura para dar espacio */
+  .carousel-item img{ height:300px; }
   .carousel-caption{
     left:.75rem; right:.75rem; bottom:.75rem;
     padding:.65rem .8rem;
@@ -186,7 +183,7 @@ body{
   }
 }
 
-/* Si también quieres estos ajustes hasta tablets chicas */
+/*ajustes hasta tablets chicas */
 @media (max-width: 767.98px){
   .carousel-caption{
     left:1rem; right:1rem; bottom:1rem;
@@ -255,27 +252,17 @@ footer .small{ color:#cfe3ff; }
   border-radius:.5rem;
 }
 
-/* ===== Responsivo ===== */
-@media (max-width: 991.98px){
-  .carousel-item img{ height:420px; }
-}
 @media (max-width: 575.98px){
   .carousel-item img{ height:320px; }
   .hero{ min-height:70vh; }
 }
 
-
-
-
-
 /* ===== Servicios: cards más elegantes, legibles y consistentes ===== */
 
-/* Grid: respirito extra entre columnas en pantallas grandes */
 @media (min-width: 992px){
   main .row.g-4 { row-gap: 2rem; }
 }
 
-/* Card: imagen más alta, overlay sutil y hover “lift” */
 .card .card-img-top{
   height: 220px; object-fit: cover;
   filter: saturate(1.02) contrast(1.02);
@@ -285,7 +272,6 @@ footer .small{ color:#cfe3ff; }
   box-shadow: 0 18px 45px rgba(15,23,42,.12);
 }
 
-/* Card body: jerarquía tipográfica y metadatos alineados */
 .card .card-title{
   font-weight: 700;
   margin-bottom: .25rem;
@@ -300,7 +286,6 @@ footer .small{ color:#cfe3ff; }
   opacity: .9;
 }
 
-/* Precio resaltado como “pill” sin cambiar el HTML (último p dentro del body) */
 .card .card-body .card-text:last-of-type{
   align-self: flex-start;
   padding: .25rem .6rem;
@@ -311,7 +296,6 @@ footer .small{ color:#cfe3ff; }
   margin: 1rem 0 1rem 0;
 }
 
-/* Botón: outline más visible pero en la misma jerarquía */
 .btn-outline-primary{
   border-color: var(--brand-500);
   color: var(--brand-600);
@@ -339,16 +323,16 @@ footer .small{ color:#cfe3ff; }
 /* Botón de cierre blanco en los modales */
 .btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
-  opacity: 1; /* que no se vea apagado */
+  opacity: 1; 
 }
 .btn-close:focus {
   box-shadow: none;
 }
 
 .modal-body img {
-  height: 100%;          /* ocupar toda la altura disponible */
-  object-fit: cover;     /* que recorte si sobra, sin deformar */
-  border-radius: .75rem; /* esquinas suaves */
+  height: 100%;          
+  object-fit: cover;   
+  border-radius: .75rem; 
 }
 
 .modal-title{ font-weight: 700; }
@@ -373,10 +357,6 @@ footer .small{ color:#cfe3ff; }
   padding: .5rem .75rem;
 }
 
-/* ===== Footer en esta página: mismo estilo general ya definido ===== */
-/* (hereda tu gradiente/nav ya configurado en estilos principales) */
-
-
 /* ===== Sub-hero (header delgado para páginas internas) ===== */
 .sub-hero {
   min-height: 35vh; /* más bajo que el hero de inicio */
@@ -392,10 +372,10 @@ footer .small{ color:#cfe3ff; }
   text-shadow: 0 6px 20px rgba(0,0,0,.5);
 }
 
-/* ===== Registro: card y campos “premium” ===== */
+/* ===== Registro: card y campos  ===== */
 .form-card { 
   background: var(--surface); 
-  max-width: 1100px;   /* antes quedaba limitada por el col-xx */
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -405,10 +385,9 @@ footer .small{ color:#cfe3ff; }
   background: linear-gradient(90deg, var(--brand-600), var(--accent-500));
 }
 
-/* Evita que la card de registro se mueva al pasar el mouse */
 .form-card:hover {
   transform: none !important;
-  box-shadow: 0 18px 45px rgba(15,23,42,.12); /* mismo shadow que tenía, pero fijo */
+  box-shadow: 0 18px 45px rgba(15,23,42,.12); 
 }
 
 /* Etiquetas requeridas con asterisco */
@@ -418,21 +397,20 @@ footer .small{ color:#cfe3ff; }
   font-weight: 700;
 }
 
-/* Inputs grandes y cómodos */
 .form-control-lg, .form-select-lg, .input-group-lg>.form-control, .input-group-lg>.form-select{
   font-size: 1rem;   /* antes heredaba ~1.25rem */
   padding-top: .65rem;
   padding-bottom: .65rem;
 }
 
-/* Grupo con ícono */
+/* ícono */
 .input-group-text{
   background: linear-gradient(135deg, rgba(56,189,248,.12), rgba(245,158,11,.12));
   border: 1px solid rgba(2,8,23,.08);
   border-right: 0;
 }
 
-/* Estados de validación (visuales, sin cambiar tu lógica) */
+/* Estados de validación*/
 .form-control:focus, .form-select:focus{
   border-color: rgba(14,165,233,.45);
   box-shadow: 0 0 0 .2rem rgba(14,165,233,.15);
@@ -447,7 +425,7 @@ footer .small{ color:#cfe3ff; }
   border-color: #22c55e;
 }
 
-/* Hint/nota de privacidad */
+/* nota de privacidad */
 .form-hint{
   color: var(--muted);
   font-size: .9rem;
@@ -465,7 +443,7 @@ footer .small{ color:#cfe3ff; }
 }
 
 @media (min-width: 992px){
-  .form-card{ max-width: 100%; } /* aprovecha toda la mitad derecha */
+  .form-card{ max-width: 100%; }
 }
 
 .form-label{
@@ -484,7 +462,7 @@ footer .small{ color:#cfe3ff; }
   border: 1px solid rgba(2,8,23,.06);
 }
 
-/* Icono “bullet” redondo con gradiente de marca */
+/* Icono “bullet” */
 .contact-bullet{
   width: 36px; height: 36px;
   display: inline-grid; place-items: center;
@@ -494,14 +472,14 @@ footer .small{ color:#cfe3ff; }
   box-shadow: 0 10px 24px rgba(2,132,199,.25);
 }
 
-/* Card del formulario de contacto: fija (sin salto en hover) */
+/* Card del formulario de contacto */
 .contact-card{ background: var(--surface); }
 .contact-card:hover{
   transform: none !important;
   box-shadow: 0 18px 45px rgba(15,23,42,.12);
 }
 
-/* Inputs coherentes con Registro pero en tamaño equilibrado */
+/* Inputs coherentes con Registro en tamaño equilibrado */
 .contact-card .form-control-lg,
 .contact-card .input-group-lg > .form-control,
 .contact-card .input-group-lg > .form-select{
@@ -518,7 +496,6 @@ footer .small{ color:#cfe3ff; }
   min-height: 195px; 
 }
 
-/* En pantallas grandes, da más aire al layout */
 @media (min-width: 992px){
   .contact-pane{ position: sticky; top: 100px; }
 }
@@ -559,7 +536,6 @@ footer .small{ color:#cfe3ff; }
   border-bottom: 1px solid rgba(2,8,23,.08);
 }
 
-/* Colores suaves y zebra ligera */
 #tablaClientes{
   --row-border: rgba(2,8,23,.06);
 }
@@ -575,38 +551,13 @@ footer .small{ color:#cfe3ff; }
   text-align: center;
 }
 
-/* Pills para destino (si tu JS agrega <span class="badge"> puedes usar esta clase) */
-.badge-destino{
-  background: linear-gradient(135deg, rgba(56,189,248,.12), rgba(245,158,11,.12));
-  border: 1px solid rgba(2,8,23,.08);
-  color: var(--ink);
-}
-
-/* Estado vacío (lo puedes mostrar/ocultar desde tu JS si quieres) */
 .clients-empty{ border-top: 1px dashed rgba(2,8,23,.12); }
-
-/* Botones de acción dentro de la tabla (si tu JS los añade) */
-.btn-action{
-  --size: 34px;
-  width: var(--size); height: var(--size);
-  display: inline-grid; place-items: center;
-  border-radius: .6rem;
-  border: 1px solid rgba(2,8,23,.08);
-  background: var(--surface);
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-}
-.btn-action:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(2,8,23,.10);
-  border-color: rgba(14,165,233,.35);
-}
 
 .clients-dropzone.drag-over {
   border-color: var(--brand-500);
   background: rgba(14,165,233,.1);
 }
 
-/* Responsive tweaks */
 @media (max-width: 991.98px){
   .clients-table-wrap{ max-height: none; }
 }

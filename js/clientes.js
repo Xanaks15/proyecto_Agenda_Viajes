@@ -44,4 +44,25 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     reader.readAsText(file, 'utf-8');
   });
+
+    // Soporte para arrastrar/soltar archivos en el dropzone
+  const dropzone = document.querySelector('.clients-dropzone');
+  if (dropzone && fileInput) {
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('drag-over');
+    });
+    dropzone.addEventListener('dragleave', () => {
+      dropzone.classList.remove('drag-over');
+    });
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('drag-over');
+      if (e.dataTransfer.files.length) {
+        fileInput.files = e.dataTransfer.files;
+        fileInput.dispatchEvent(new Event('change'));
+      }
+    });
+  }
+
 });

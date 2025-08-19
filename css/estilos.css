@@ -522,3 +522,91 @@ footer .small{ color:#cfe3ff; }
 @media (min-width: 992px){
   .contact-pane{ position: sticky; top: 100px; }
 }
+
+
+/* ===== Clientes ===== */
+.clients-card{
+  background: linear-gradient(180deg, var(--surface), var(--surface-2));
+  border: 1px solid rgba(2,8,23,.06);
+}
+
+.clients-dropzone{
+  border: 2px dashed rgba(2,8,23,.12);
+  border-radius: 1rem;
+  background: rgba(2,8,23,.02);
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease, transform .15s ease;
+}
+.clients-dropzone:hover{
+  border-color: rgba(14,165,233,.55);
+  background: rgba(14,165,233,.06);
+  transform: translateY(-1px);
+}
+
+/* Encabezado de la tabla dentro de card */
+.clients-table-header{
+  background: linear-gradient(90deg, rgba(56,189,248,.10), rgba(245,158,11,.10));
+  border-bottom: 1px solid rgba(2,8,23,.06);
+}
+
+/* Tabla: usa el tema del sitio y hace sticky el thead */
+.clients-table-wrap{ max-height: 560px; }
+.clients-table-wrap thead th{
+  position: sticky; top: 0; z-index: 2;
+  background: linear-gradient(180deg, var(--surface), var(--surface-2));
+  border-bottom: 1px solid rgba(2,8,23,.08);
+}
+
+/* Colores suaves y zebra ligera */
+#tablaClientes{
+  --row-border: rgba(2,8,23,.06);
+}
+#tablaClientes tbody tr + tr td{ border-top: 1px solid var(--row-border); }
+#tablaClientes tbody tr:nth-child(odd){ background: rgba(2,8,23,.015); }
+#tablaClientes tbody tr:hover{ background: rgba(14,165,233,.06); }
+
+/* Columnas centradas donde aplica */
+#tablaClientes th:nth-child(4),
+#tablaClientes td:nth-child(4),
+#tablaClientes th:nth-child(6),
+#tablaClientes td:nth-child(6){
+  text-align: center;
+}
+
+/* Pills para destino (si tu JS agrega <span class="badge"> puedes usar esta clase) */
+.badge-destino{
+  background: linear-gradient(135deg, rgba(56,189,248,.12), rgba(245,158,11,.12));
+  border: 1px solid rgba(2,8,23,.08);
+  color: var(--ink);
+}
+
+/* Estado vacío (lo puedes mostrar/ocultar desde tu JS si quieres) */
+.clients-empty{ border-top: 1px dashed rgba(2,8,23,.12); }
+
+/* Botones de acción dentro de la tabla (si tu JS los añade) */
+.btn-action{
+  --size: 34px;
+  width: var(--size); height: var(--size);
+  display: inline-grid; place-items: center;
+  border-radius: .6rem;
+  border: 1px solid rgba(2,8,23,.08);
+  background: var(--surface);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.btn-action:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(2,8,23,.10);
+  border-color: rgba(14,165,233,.35);
+}
+
+.clients-dropzone.drag-over {
+  border-color: var(--brand-500);
+  background: rgba(14,165,233,.1);
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px){
+  .clients-table-wrap{ max-height: none; }
+}

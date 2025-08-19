@@ -33,36 +33,82 @@
 
 
 <main class="container my-5">
-  <h1 class="mb-4">Lista de Clientes</h1>
+  <header class="mb-4">
+    <h1 class="h3 fw-bold section-title">
+      <i class="bi bi-people-fill me-2"></i> Lista de Clientes
+    </h1>
+  </header>
 
-  <div class="alert alert-secondary d-flex align-items-center" role="alert">
-    <i class="bi bi-upload me-2"></i>
-    <div>
-      Carga el archivo <strong>clientes.txt</strong> generado en la sección de Registro para visualizar la tabla.
+  <div class="row g-4">
+    <!-- Panel de carga -->
+    <div class="col-lg-4">
+      <div class="card shadow-lg rounded-4 clients-card p-3 p-md-4">
+        <div class="d-flex align-items-start gap-2 mb-2">
+          <span class="contact-bullet"><i class="bi bi-upload"></i></span>
+          <div>
+            <h2 class="h6 fw-bold mb-1">Cargar archivo</h2>
+            <p class="text-muted small mb-0">
+              Sube <strong>clientes.txt</strong> generado en Registro para ver la tabla.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dropzone -->
+        <label for="fileInput" class="form-label mt-3">Selecciona clientes.txt</label>
+        <div class="clients-dropzone mb-3" onclick="document.getElementById('fileInput').click()">
+          <i class="bi bi-filetype-txt fs-3 d-block mb-1"></i>
+          <span class="small">Haz clic o arrastra el archivo aquí</span>
+        </div>
+        <input class="form-control" type="file" id="fileInput" accept=".txt">
+
+        <div class="alert alert-secondary d-flex align-items-center mt-3 mb-0" role="alert">
+          <i class="bi bi-info-circle me-2"></i>
+          <div class="small">
+            El archivo no se envía a ningún servidor; solo se procesa en tu navegador.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla -->
+    <div class="col-lg-8">
+      <div class="card shadow-lg rounded-4 overflow-hidden">
+        <div class="clients-table-header px-3 px-md-4 py-3 d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-primary-subtle text-primary-emphasis">Clientes</span>
+            <span class="small text-muted">Listado cargado desde TXT</span>
+          </div>
+          <!-- espacio para futuros filtros/acciones si los agregas en tu JS -->
+        </div>
+
+        <div class="table-responsive clients-table-wrap">
+          <table class="table align-middle mb-0" id="tablaClientes">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Destino</th>
+                <th class="text-center">Personas</th>
+                <th>Fecha</th>
+                <th class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Tu JS inserta las filas aquí -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Estado vacío bonito (visible si no hay filas) -->
+        <div class="clients-empty text-center p-4 d-none">
+          <i class="bi bi-inbox fs-1 d-block mb-2"></i>
+          <p class="mb-0 text-muted">Aún no hay clientes para mostrar. Carga un archivo TXT.</p>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="mb-3">
-    <label for="fileInput" class="form-label">Selecciona clientes.txt</label>
-    <input class="form-control" type="file" id="fileInput" accept=".txt">
-  </div>
-
-  <div class="table-responsive">
-    <table class="table table-striped align-middle" id="tablaClientes">
-      <thead class="table-dark">
-        <tr>
-          <th>Nombre</th>
-          <th>Email</th>
-          <th>Destino</th>
-          <th>Número de Personas</th>
-          <th>Fecha</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
 </main>
+
 
 <footer class="bg-dark text-light py-4 mt-5">
   <div class="container text-center small">
